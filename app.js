@@ -7,13 +7,10 @@ const winner = document.querySelector('#winner')
 const localUI = document.querySelector('#local')
 let flipped = [];
 let counter = 0;
-let firstCard;
-let secondCard;
 let matches = 0;
-let winningScore = 2;
+let winningScore = cards.length/2;
 let highscore = 0;
-let animationComplete = false;
-
+let clicked = false;
 
 localUI.textContent = '';
 cards.forEach(card=> card.addEventListener('click', flipcard));
@@ -40,38 +37,44 @@ function shuffle(){
 };
 
 function flipcard(){
-    this.classList.add('flip')
-    flipped.push(this)
-    this.classList.add('disable')
-    if(flipped.length === 2){
-        counter++;
-        moves.textContent = counter;
-            if(flipped[0].dataset.name === flipped[1].dataset.name){
-                match();
-                matches++;
-                if(matches === winningScore){
-                    winner.textContent = `Completed in ${counter} moves!`
-                    disableClick()
-                    if(highscore === 0){
-                        localScore();
-                    }else if(counter < highscore){
-                       localScore();
-                    }
-                } 
-            }else{
-                unmatch();
-              
-            }
+    if(clicked){
+        return;
     }
+        this.classList.add('flip')
+        flipped.push(this)
+        this.classList.add('disable')
+        if(flipped.length === 2){
+            counter++;
+            moves.textContent = counter;
+                if(flipped[0].dataset.name === flipped[1].dataset.name){
+                    match();
+                    matches++;
+                    if(matches === winningScore){
+                        winner.textContent = `Completed in ${counter} moves!`
+                        disableClick()
+                        if(highscore === 0){
+                            localScore();
+                        }else if(counter < highscore){
+                           localScore();
+                        }
+                    } 
+                    
+                }else{
+                    unmatch();
+                    
+                }
+        }
 };
 
 function match(){
     flipped[0].classList.add('match')
     flipped[1].classList.add('match')
     flipped=[];
+    
 };
 
 function unmatch(){
+    clicked = true;
     setTimeout(() => {
         flipped[0].classList.add('close');
         flipped[1].classList.add('close');
@@ -82,6 +85,7 @@ function unmatch(){
         flipped[0].classList.remove('disable')
         flipped[1].classList.remove('disable')
         flipped=[];
+        clicked = false;
     },1000);
       
 };
@@ -103,6 +107,6 @@ function disableClick(){
 
 function enableClick(){
     for(let card of cards){
-        card.classList.add('enable')
+        card.classList.remove('disable')
     }
 }
