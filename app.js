@@ -67,10 +67,13 @@ function flipcard(){
 };
 
 function match(){
-    flipped[0].classList.add('match')
-    flipped[1].classList.add('match')
-    flipped=[];
-    
+    clicked = true;
+    setTimeout(() => {      
+        flipped[0].classList.add('match')
+        flipped[1].classList.add('match')
+        flipped=[];
+        clicked = false;
+    }, 1000);
 };
 
 function unmatch(){
