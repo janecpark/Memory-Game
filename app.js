@@ -7,13 +7,10 @@ const winner = document.querySelector('#winner')
 const localUI = document.querySelector('#local')
 let flipped = [];
 let counter = 0;
-let firstCard;
-let secondCard;
 let matches = 0;
-let winningScore = 2;
+let winningScore = cards.length/2;
 let highscore = 0;
-let animationComplete = false;
-
+let clicked = false;
 
 localUI.textContent = '';
 cards.forEach(card=> card.addEventListener('click', flipcard));
@@ -39,10 +36,15 @@ function shuffle(){
     });
 };
 
-function flipcard(){
-    this.classList.add('flip')
-    flipped.push(this)
-    this.classList.add('disable')
+function flipcard(e){
+    let clickedCard;
+    if(clicked){
+        return;
+    }
+    clickedCard = e.target.parentElement;
+    clickedCard.classList.add('flip')
+    flipped.push(clickedCard)
+    clickedCard.classList.add('disable')
     if(flipped.length === 2){
         counter++;
         moves.textContent = counter;
@@ -55,23 +57,30 @@ function flipcard(){
                     if(highscore === 0){
                         localScore();
                     }else if(counter < highscore){
-                       localScore();
+                        localScore();
                     }
                 } 
+                
             }else{
                 unmatch();
-              
+                
             }
     }
 };
 
 function match(){
-    flipped[0].classList.add('match')
-    flipped[1].classList.add('match')
-    flipped=[];
+    clicked = true;
+    setTimeout(() => {      
+        flipped[0].classList.add('match')
+        flipped[1].classList.add('match')
+        flipped=[];
+        clicked = false;
+    }, 1000);
+    
 };
 
 function unmatch(){
+    clicked = true;
     setTimeout(() => {
         flipped[0].classList.add('close');
         flipped[1].classList.add('close');
@@ -82,6 +91,7 @@ function unmatch(){
         flipped[0].classList.remove('disable')
         flipped[1].classList.remove('disable')
         flipped=[];
+        clicked = false;
     },1000);
       
 };
@@ -103,6 +113,6 @@ function disableClick(){
 
 function enableClick(){
     for(let card of cards){
-        card.classList.add('enable')
+        card.classList.remove('disable')
     }
 }
