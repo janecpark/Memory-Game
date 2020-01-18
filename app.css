@@ -73,10 +73,6 @@ span{
     -o-transform: rotateY(180deg);
 }
 
-.back{
-    z-index: 1;
-
-}
 
 .front, .back{
     width: 100%;
