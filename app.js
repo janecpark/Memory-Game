@@ -66,30 +66,8 @@ function flipcard(e){
                 
             }
     }
-        this.classList.add('flip')
-        flipped.push(this)
-        this.classList.add('disable')
-        if(flipped.length === 2){
-            counter++;
-            moves.textContent = counter;
-                if(flipped[0].dataset.name === flipped[1].dataset.name){
-                    match();
-                    matches++;
-                    if(matches === winningScore){
-                        winner.textContent = `Completed in ${counter} moves!`
-                        disableClick()
-                        if(highscore === 0){
-                            localScore();
-                        }else if(counter < highscore){
-                           localScore();
-                        }
-                    } 
-                    
-                }else{
-                    unmatch();
-                    
-                }
-        }
+       
+        
 };
 
 function match(){
