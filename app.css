@@ -8,7 +8,8 @@ body{
     background: #20002c;  
     background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
     background: linear-gradient(to right, #cbb4d4, #20002c); 
-    font-family: 'Space Mono', monospace;
+
+
 }
 
 .header{
@@ -16,6 +17,8 @@ body{
     padding-top: 5px;
     text-transform: uppercase;
     line-height: 1.5;
+    font-color: black;
+    font-family: 'Space Mono', monospace;
 }
 
 
@@ -33,12 +36,10 @@ button {
 	transition: all 0.3s;
     outline: none;
 
-    /* margin: 0 auto;
-    display: block; */
 }
 
 button:hover {
-    color: rgb(180, 179, 179);
+    color:rgb(180, 179, 179);
     border:1px solid rgb(180, 179, 179);
 	
 }
@@ -103,9 +104,4 @@ span{
 .enable{
     pointer-events: auto;
 }
-@media only screen and (max-device-width: 480px) {
-   .grid{
-       flex: 50%; 
-   }
- }
 
