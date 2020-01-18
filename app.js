@@ -70,16 +70,22 @@ function flipcard(e){
         
 };
 
-function match(){
-    clicked = true;
-    setTimeout(() => {      
-        flipped[0].classList.add('match')
-        flipped[1].classList.add('match')
-        flipped=[];
-        clicked = false;
-    }, 1000);
+// function match(){
+//     clicked = true;
+//     setTimeout(() => {      
+//         flipped[0].classList.add('match')
+//         flipped[1].classList.add('match')
+//         flipped=[];
+//         clicked = false;
+//     }, 1000);
     
-};
+// };
+
+function match(){
+    flipped[0].classList.add('match')
+    flipped[1].classList.add('match')
+    flipped=[];
+}
 
 function unmatch(){
     clicked = true;
