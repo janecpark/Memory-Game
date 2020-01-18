@@ -55,40 +55,16 @@ span{
     height: 7rem;
     margin: 7px;
     position: relative;
-    background-color:purple;
+    background:white;
     border-radius: 15%;
     transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transition: transform 1s;
-    -webkit-transition: transform 1s; 
-  
-
+    transition: transform 0.8s;
 }
 
 
-/* 
 .card.flip, .front{
     transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-} */
-
-.card.flip {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -ms-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-    -webkit-transition: transform 1s;
-    -moz-transition: transform 1s ;
-    -o-transition: transform 1s;
-    transition: transform 1s;
-
-  }
-
+}
 
 .front, .back{
     width: 100%;
@@ -97,71 +73,29 @@ span{
     border-radius: 10%;
     position: absolute; 
     background: rgb(180, 179, 179);
+    backface-visibility: hidden;
     border: 1px solid rgba(0,0,0,0.5);
 }
 
-
-.front {
-    z-index: 2;
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -ms-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-    -webkit-transition: transform 0.5s;
-    -moz-transition: transform 0.5s ;
-    -o-transition: transform 0.5s;
-    transition: transform 0.5s;
-    backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-  }
-
-  .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY( 0deg );
-    -moz-transform: rotateY( 0deg );
-    -ms-transform: rotateY( 0deg );
-    -o-transform: rotateY( 0deg );
-    transform: rotateY( 0deg );
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  
-
 .grid{
     max-width: 650px;
-    min-width: 120px;
+    min-width: 200px;
     height: 500px;
     margin: 0 auto;
     display:flex;
     flex-direction: column;
-    flex-wrap: wrap;;
+    flex-wrap: wrap;
     padding-top: 0;
-    align-items: center;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    -o-perspective: 1000px; 
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    align-items: center
     
 }
 
 .card.close{
     transform: rotateY(0);
-    -webkit-transform: rotateY(0);
-    -moz-transform: rotateY(0);
-    -o-transform: rotateY(0);
 }
 
 .match{
     backface-visibility: visible;
-    -webkit-backface-visibility: visible;
-    -moz-backface-visibility: visible;
-    -moz-backface-visibility: visible;
 }
 
 .disable{
