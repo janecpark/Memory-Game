@@ -63,8 +63,7 @@ span{
     -o-transform-style: preserve-3d;
     transition: transform 0.8s;
     -webkit-transition: transform 0.8s;    
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+
 }
 
 
@@ -102,8 +101,6 @@ span{
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
     -o-perspective: 1000px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     
 }
 
