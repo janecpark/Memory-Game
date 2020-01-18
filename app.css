@@ -55,25 +55,38 @@ span{
     height: 7rem;
     margin: 7px;
     position: relative;
-    background:white;
+    background-color:purple;
     border-radius: 15%;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
-    transition: transform 0.8s;
-    -webkit-transition: transform 0.8s; 
+    transition: transform 1s;
+    -webkit-transition: transform 1s; 
   
 
 }
 
 
+/* 
 .card.flip, .front{
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
-}
+} */
+
+.card.flip {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -ms-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s ;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+  }
 
 
 .front, .back{
@@ -87,6 +100,37 @@ span{
     -webkit-backface-visibility: hidden;
     border: 1px solid rgba(0,0,0,0.5);
 }
+
+
+.front {
+    z-index: 2;
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -ms-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s ;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY( 0deg );
+    -moz-transform: rotateY( 0deg );
+    -ms-transform: rotateY( 0deg );
+    -o-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
 
 .grid{
     max-width: 650px;
