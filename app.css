@@ -138,6 +138,7 @@ span{
 .grid{
     max-width: 650px;
     min-width: 100%;
+    min-height: 100vh;
     height: 500px;
     margin: 0 auto;
     display:flex;
