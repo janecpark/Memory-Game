@@ -58,6 +58,9 @@ span{
     background:white;
     border-radius: 15%;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
     transition: transform 0.8s;
 }
 
@@ -91,6 +94,9 @@ span{
     padding-top: 0;
     align-items: center;
     perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
     
 }
 
